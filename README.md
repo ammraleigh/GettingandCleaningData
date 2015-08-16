@@ -85,7 +85,4 @@ The run_analysis.R script performs the following activites to create the tidyDat
 2 Use ddply to create the 2nd Independent Tidy Data Set, tidyDataSet2  
 3 Output tidyDataSet2 to Project/tidyDataSet2.txt
 
-
-##![tidyData2](C:\Users\ann\Documents\Data Science\Coursera John Hopkins\3 Getting and Cleaning Data\Course ##Project\GettingandCleaningData\GettingandCleaningData\tidyDataSet2.png)
-
 ![tidyData2](https://github.com/ammraleigh/GettingAndCleaningData/raw/master/tidyDataSet2.png)
