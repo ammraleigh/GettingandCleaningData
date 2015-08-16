@@ -44,7 +44,8 @@ The following are annotations to the project instructions that correspond to the
 The following steps describe how to setup the environment to create the tidyDataSet2 deliverable:  
 
 1 Create a Project directory  
-2 Download the zip file containing the raw data set:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
+2 Download the zip file containing the raw data set:   
+        https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
 3 Unzip the raw data set into Project/UCI HAR Dataset  
 4 Download the run_analysis.R script from github.com into Project/GettingandCleaningData  
 5 Using RStudio, set the session working directory to Project/GettingandCleaningData and run the run_analysis.R script.  
@@ -55,27 +56,27 @@ The following steps describe how to setup the environment to create the tidyData
 The run_analysis.R script performs the following activites to create the tidyDataSet2 deliverable:
 
 **Prepare Test Data**  
-1 Read data from "Activity_labels.txt" into Activity Desc  
-2 Read in "subject_test.txt" into dataTest and add the column name "SubjectID"  
-3 Create a vector of nrow(dataTest) "Test"and add this column to the right of dataTest  
+1 Read data from "Activity_labels.txt" into ActivityDesc  
+2 Column 1 SubjectID: Read in "subject_test.txt" into dataTest and add the column name "SubjectID"  
+3 Column 2 SubjectType: create a vector of nrow(dataTest) "Test"and add this column to the right of dataTest  
 4 Read in Test data activity levels from "y_test.txt" as "Activity" into temp and convert the integer field to a Factor. Use blank.lines.skip = TRUE to remove a blank line.  
 5 Update the Activity Factor in temp with the Activity Descriptions in ActivityDesc  
-6 Add temp as a column to the right of dataTest  
+6 Column 3 Activity: Add temp as a column to the right of dataTest  
 7 Read in Test derived statistics ('features') from "X_test.txt"into temp  
 8 Compute the mean and sd for all of the rows in temp and add them to new columns: temp\$Mean and temp\$SD.  
-9 Add columns temp\$Mean and temp\$SD to the right of dataTest  
-10 Update the column names for "SubjectType", "MeasureMean", and "MeasureSD"  
+9 Columns 4&5 MeasureMean & Measure SD: Add MeasureMean and MeasureSD columns 4 and 5: Add columns temp\$Mean and temp\$SD to the right of dataTest  
+10 Update the column names 2, 4, and 5 as "SubjectType", "MeasureMean", and "MeasureSD"  
 
 **Prepare Train Data**  
-1 Read in "subject_train.txt" into dataTest and add the column name "SubjectID"  
-2 Create a vector of nrow(dataTrain) "Training"and add this column to the right of dataTrain  
+1 Column 1 SubjectID: Read in "subject_train.txt" into dataTest and add the column name "SubjectID"  
+2 Column 2 SubjectType: Create a vector of nrow(dataTrain) "Training"and add this column to the right of dataTrain  
 3 Read in Train data activity levels from "y_train.txt" as "Activity" into temp and convert the integer field to a Factor. Use blank.lines.skip = TRUE to remove a blank line.  
 4 Update the Activity Factor in temp with the Activity Descriptions in ActivityDesc  
-5 Add temp as a column to the right of dataTrain  
+5 Column 3 Activity: Add temp as a column to the right of dataTrain  
 6 Read in Train derived statistics ('features') from "X_train.txt"into temp  
 7 Compute the mean and sd for all of the rows in temp and add them to new columns: temp\$Mean and temp\$SD.  
-8 Add columns temp\$Mean and temp\$SD to the right of dataTrain  
-9 Update the column names for "SubjectType", "MeasureMean", and "MeasureSD"  
+8 Columns 4&5 MeasureMean & Measure SD: Add columns temp\$Mean and temp\$SD to the right of dataTrain  
+9 Update the column names 2, 4, and 5 as "SubjectType", "MeasureMean", and "MeasureSD"  
 
 **Combine Test and Train Data into Tidy Data Set (tidyDataSet1)**   
 1 Using row bind combine dataTest and dataTrain into tidyDataSet1
